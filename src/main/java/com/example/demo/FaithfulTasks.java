@@ -11,7 +11,7 @@ import java.util.Random;
 
 @Component
 @EnableScheduling
-public class MyFaithfulTasks {
+public class FaithfulTasks {
     RestTemplate restTemplate = new RestTemplate();
     Random r = new Random();
 
