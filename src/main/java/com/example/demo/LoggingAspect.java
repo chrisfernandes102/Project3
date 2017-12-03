@@ -7,18 +7,22 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+
 @Component
 @Aspect
 public class LoggingAspect {
-    @Pointcut("execution(public * com.example..*(..))")
-    public void publicMethod() { }
+    //For each method in Controller
+    @Pointcut("execution(public * com.example.demo.HelloController.*(..))")
+    public void publicMethod(){}
 
+    //Print which method is being executed
     @Before("publicMethod()")
-    public void addLog(final JoinPoint joinPoint){
-        System.out.println("* * * Executing: " + joinPoint.getSignature());
-        Object[] arguments = joinPoint.getArgs();
-        for(Object argument : arguments){
-            System.out.println("* * * "+ argument.getClass().getSimpleName()+ " = " + argument);
+    public void addLog(final JoinPoint jP){
+        System.out.println("\n* * * Executing " + jP.getSignature());
+        java.lang.Object[] arguments = jP.getArgs();
+        for(java.lang.Object arg: arguments){
+            System.out.println(arg.getClass().getSimpleName() + " = " + arg + "");
         }
     }
+
 }

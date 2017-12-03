@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class TimingAspect {
-    @Pointcut("execution(* com.example..*(..))")
+    @Pointcut("execution(* com.example.demo.*Controller.*(..))")
     public void allMethods() { }
 
     @Around("allMethods() && @annotation(Timed)")

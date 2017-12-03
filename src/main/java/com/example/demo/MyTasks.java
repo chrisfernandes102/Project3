@@ -44,7 +44,6 @@ public class MyTasks {
         Vehicle vehicle = new Vehicle(randId,"Ford Focus", 2019,20900);
         restTemplate.put(url,vehicle,Vehicle.class);
         Vehicle v = restTemplate.getForObject(getUrl,Vehicle.class);
-        System.out.println(getUrl);
     }
 
     @Scheduled(cron = "0 0 * * * *")
