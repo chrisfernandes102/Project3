@@ -23,7 +23,7 @@ public class FaithfulAspect {
 
     @After("withoutFriends()")
     public void prayAndGiveGlory(final JoinPoint joinPoint){
-        System.out.println("Then I praise and give glory to God.");
+        System.out.println("Then I praise and give glory to God after.");
     }
 
     /**
@@ -39,7 +39,7 @@ public class FaithfulAspect {
 
     @After("withFriends()")
     public void prayAndGiveGloryWithFriends(final JoinPoint joinPoint){
-        System.out.println("But then I praise and give glory to God after.");
+        System.out.println("But I do always praise and give glory to God after.");
     }
 
 }
