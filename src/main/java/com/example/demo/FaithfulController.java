@@ -14,9 +14,9 @@ public class FaithfulController {
     @RequestMapping(value = "/eat/{coffee}", method = RequestMethod.GET)
     public void eating(@PathVariable("coffee") String coffee) throws IOException {
         if(coffee == null) {
-            System.out.println(" before drinking some coffee!");
+            System.out.println(" before drinking a coffee!");
         } else {
-            System.out.println(" before drinking some " + coffee + "!");
+            System.out.println(" before drinking a " + coffee + "!");
         }
     }
 
